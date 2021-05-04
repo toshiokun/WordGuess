@@ -5,13 +5,12 @@
 
 import * as React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Text, View } from '../components/Themed';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function Test({ navigation }: any) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This screen doesn't exist.</Text>
+      <Text style={styles.title}>テスト用のページです</Text>
       <TouchableOpacity onPress={() => navigation.replace('Root')} style={styles.link}>
         <Text style={styles.linkText}>Go to home screen!</Text>
       </TouchableOpacity>

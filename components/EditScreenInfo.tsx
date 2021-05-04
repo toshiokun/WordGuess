@@ -1,12 +1,15 @@
+import { useNavigation } from '@react-navigation/core';
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Colors from '../constants/Colors';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
 export default function EditScreenInfo({ path }: { path: string }) {
+  const { navigate } = useNavigation();
+
   return (
     <View>
       <View style={styles.getStartedContainer}>
@@ -16,6 +19,10 @@ export default function EditScreenInfo({ path }: { path: string }) {
           darkColor="rgba(255,255,255,0.8)">
           Open up the code for this screen:
         </Text>
+
+        <Button title="テスト用のページ" onPress={() => {
+          navigate("Test");
+        }}/>
 
         <View
           style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
